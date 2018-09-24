@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test SKKNI JPWP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="container mt-3">
+        <h3 style="text-align:center;">Test SKKNI JPWP</h3>
+        <br>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu1">Peserta</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#menu2">Skema</a>
+            </li>
+            <li class="nav-item nilai-peserta">
+                <a class="nav-link" data-toggle="tab" href="#menu3">Nilai</a>
+            </li>
+            <li class="nav-item"> 
+                <a class="nav-link" data-toggle="tab" href="#menu4">Hasil</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="menu1" class="container tab-pane fade"><br>
+                <div id="form-tambah-peserta">
+                    <h5>Tambahkan Peserta</h5>
+                    <div class="container">
+                        <div>
+                            <label>Nama Peserta : </label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="nama" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                        <div>
+                            <label>Alamat : </label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="alamat" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                        <div>
+                            <label>Email : </label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="email" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                        <div>
+                            <label>No Telp : </label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="telp" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                        <br>
+                        <button type="button" id="submitPeserta" class="btn btn-primary">Simpan</button>
+                    </div>
+                    <table id="tablePeserta" style="margin-bottom: 20px; margin-top: 20px;">
+                        <tr>
+                            <th>No Peserta</th>
+                            <th>Nama Peserta</th>
+                            <th>Alamat</th>
+                            <th>Email</th>
+                            <th>No Telp</th>
+                            <th>Action</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="menu2" class="container tab-pane active"><br>
+                <div id="form-tambah-skema">
+                    <h5>Tambahkan Skema</h5>
+                    <div class="container">
+                        <div>
+                            <label>Nama Skema : </label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="nama-skema" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                        <div>
+                            <label>Ruangan : </label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="ruang" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" id="submitSkema" class="btn btn-primary">Simpan</button>
+                    <br>
+                    <table id="tableSkema" style="margin-bottom: 20px; margin-top: 20px;">
+                        <tr>
+                            <th>No Skema</th>
+                            <th>Nama Skema</th>
+                            <th>Ruang</th>
+                            <th>Action</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="menu3" class="container tab-pane fade"><br>
+                <div id="form-tambah-nilai">
+                    <h5>Tambahkan Nilai Peserta</h5>
+                    <div style="margin-bottom:15px;">
+                        <label>Peserta : </label>
+                        <form autocomplete="off">
+                            <div class="autocomplete" style="width: 79vw;">
+                                <input id="ddPeserta-nilai" class="form-control" type="text" name="myCountry" placeholder="Nama Peserta">
+                            </div>
+                        </form>
+                    </div>
+                    <div style="margin-bottom:15px;">
+                        <label>Skema : </label>
+                        <form autocomplete="off">
+                            <div class="autocomplete" style="width: 79vw;">
+                              <input id="ddSkema-nilai" class="form-control" type="text" name="myCountry" placeholder="Nama Skema">
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <label>Nilai Praktek : </label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="nilai_p" aria-label="Text input with checkbox">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Nilai Interview : </label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="nilai_i" aria-label="Text input with checkbox">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Nilai Teori : </label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="nilai_t" aria-label="Text input with checkbox">
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" id="submitNilai" class="btn btn-primary">Simpan</button>
+                </div><br><br>
+            </div>
+            <div id="menu4" class="container tab-pane fade"><br>
+                <div id="form-hasil">
+                    <div>
+                        <h5 class="float-left">Hasil Keseluruhan Peserta</h5>
+                        <button id="refresh-table" type="button" class="btn btn-primary float-right">Refresh Table</button>
+                    </div><br><br>
+                    <div class="col-sm-6 float-left">
+                        <label>Filter Berdasarkan Skema : </label>
+                        <form autocomplete="off" style="margin-bottom: 10px;">
+                            <div class="autocomplete" style="width: 35vw;">
+                                <input id="ddSkema-hasil" class="form-control" type="text" name="myCountry" placeholder="Nama Peserta">
+                            </div>
+                        </form>
+                        <button type="button" id="btn-filter-skema" class="btn btn-primary">Filter</button>
+                    </div>
+                    <div class="col-sm-6 float-right">
+                        <label>Filter Berdasarkan Hasil : </label>
+                        <form autocomplete="off" style="margin-bottom: 10px;">
+                            <div class="autocomplete" style="width: 35vw;">
+                                <input id="filter-hasil" class="form-control" type="text" name="myCountry" placeholder="Nama Peserta">
+                            </div>
+                        </form>
+                        <button type="button" id="btn-filter-hasil" class="btn btn-primary">Filter</button>
+                    </div><br><br><br><br><br>
+                    <table id="table-hasil" style="margin-bottom: 20px; margin-top: 20px;">
+                        <tr>
+                            <th>No Peserta</th>
+                            <th>Nama Peserta</th>
+                            <th>Jenis Skema</th>
+                            <th>Ruang</th>
+                            <th>Nilai P</th>
+                            <th>Nilai I</th>
+                            <th>Nilai T</th>
+                            <th>Hasil</th>
+                            <th>Keterangan</th>
+                            <th>Action</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- The Modal -->
+        <div class="modal" id="modalHapusPeserta">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h5 class="modal-title">Anda Yakin Ingin Menghapus Data ?</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body-hapus-peserta">
+                        
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="$(this).hapusPeserta()">Hapus</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal" id="modalHapusSkema">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h5 class="modal-title">Anda Yakin Ingin Menghapus Data ?</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body-hapus-skema">
+                        
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="$(this).hapusSkema()">Hapus</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal" id="modalHapusHasil">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h5 class="modal-title">Anda Yakin Ingin Menghapus Data ?</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body-hapus-hasil">
+                    
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="$(this).hapusHasil()">Hapus</button>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal" id="modalEditHasil">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Data Peserta</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div >
+                            <label>Nomor Peserta : </label>
+                            <div class="input-group mb-3" >
+                                <input id="noPeserta-edit" class="form-control" type="text" disabled>
+                            </div>
+                        </div>
+                        <div >
+                            <label>Nama Peserta : </label>
+                            <div class="input-group mb-3" >
+                                <input id="namaPeserta-edit" class="form-control" type="text" disabled>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Skema : </label>
+                            <div class="input-group mb-3">
+                                <input id="namaSkema-edit" class="form-control" type="text" disabled>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Nilai Praktek : </label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="nilai_p_edit" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                        <div>
+                            <label>Nilai Interview : </label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="nilai_i_edit" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                        <div>
+                            <label>Nilai Teori : </label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="nilai_t_edit" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="$(this).editHasil()">Perbarui</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- The Modal -->
+        <div class="modal" id="modalEditPeserta">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Data Peserta</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div >
+                            <label>Nomor Peserta : </label>
+                            <div class="input-group mb-3" >
+                                <input id="no-peserta-edit" class="form-control" type="text" disabled>
+                            </div>
+                        </div>
+                        <div >
+                            <label>Nama Peserta : </label>
+                            <div class="input-group mb-3" >
+                                <input id="nama-peserta-edit" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div>
+                            <label>Alamat : </label>
+                            <div class="input-group mb-3">
+                                <input id="alamat-peserta-edit" class="form-control" type="text" >
+                            </div>
+                        </div>
+                        <div>
+                            <label>Email : </label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="email-peserta-edit" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                        <div>
+                            <label>Telp : </label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="telp-peserta-edit" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="$(this).editPeserta()">Perbarui</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- The Modal -->
+         <div class="modal" id="modalEditSkema">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Data Skema</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div >
+                            <label>Nomor Skema : </label>
+                            <div class="input-group mb-3" >
+                                <input id="no-skema-edit" class="form-control" type="text" disabled>
+                            </div>
+                        </div>
+                        <div >
+                            <label>Nama Skema : </label>
+                            <div class="input-group mb-3" >
+                                <input id="nama-skema-edit" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div>
+                            <label>Ruang : </label>
+                            <div class="input-group mb-3">
+                                <input id="ruang-skema-edit" class="form-control" type="text" >
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="$(this).editSkema()">Perbarui</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/autocomplete.js"></script>
+</body>
+</html>
